@@ -25,6 +25,7 @@
 		2E5509CD1C9683D400527D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E5509D01C9683D400527D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E5509D21C9683D400527D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E5509D81C969AF100527D05 /* Weather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weather-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D763EFD1B7F0B4C078627F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +64,7 @@
 			children = (
 				2E5509C61C9683D400527D05 /* AppDelegate.swift */,
 				2E5509C81C9683D400527D05 /* ViewController.swift */,
+				2E5509D81C969AF100527D05 /* Weather-Bridging-Header.h */,
 				2E5509CA1C9683D400527D05 /* Main.storyboard */,
 				2E5509CD1C9683D400527D05 /* Assets.xcassets */,
 				2E5509CF1C9683D400527D05 /* LaunchScreen.storyboard */,
@@ -329,6 +331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ying.seu.com.WeatherDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherDemo/Weather-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -341,6 +344,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ying.seu.com.WeatherDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherDemo/Weather-Bridging-Header.h";
 			};
 			name = Release;
 		};
