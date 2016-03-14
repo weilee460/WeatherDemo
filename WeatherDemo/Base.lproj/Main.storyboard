@@ -18,21 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Melboune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV2-pQ-Nev">
-                                <rect key="frame" x="20" y="28" width="560" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="17.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvv-9t-2lA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvv-9t-2lA">
                                 <rect key="frame" x="20" y="544" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-QR-Apk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-QR-Apk">
                                 <rect key="frame" x="20" y="84" width="560" height="452"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melboune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV2-pQ-Nev">
+                                <rect key="frame" x="20" y="28" width="560" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -54,6 +54,11 @@
                             <constraint firstItem="zvv-9t-2lA" firstAttribute="centerX" secondItem="txc-y5-teT" secondAttribute="centerX" id="wjL-xZ-RwP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="location" destination="dV2-pQ-Nev" id="gzG-BZ-YIg"/>
+                        <outlet property="temperatureLabel" destination="zvv-9t-2lA" id="iHc-Dn-9bE"/>
+                        <outlet property="weatherImageView" destination="mvQ-QR-Apk" id="Cw8-S1-xqy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1EA-ie-k6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
