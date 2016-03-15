@@ -19,12 +19,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var temperatureLabel: UILabel!
     
     //
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var loadingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //start loading animation
+        loadingIndicator.startAnimating()
+        
+        //Add backgroud image to view
+        let backgroundImage = UIImage(named: "background.png")
+        self.view.backgroundColor = UIColor(patternImage: backgroundImage!)
         
         if (ios9()) {
            locationManager.requestAlwaysAuthorization()
@@ -52,6 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
+        loadingLabel.text = "Geographic Infor Error!"
     }
 
 
@@ -77,6 +89,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateWeatherData(jsonResult: NSDictionary!)
     {
+        //stop loading indicator
+        loadingIndicator.stopAnimating()
+        loadingIndicator.hidden = true
+        //hide loading label
+        loadingLabel.text = nil
+        
         if let temp = jsonResult["main"]!["temp"] as? Double
         {
             var temperature: Double
@@ -110,7 +128,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         else
         {
-            
+            loadingLabel.text = "Weather Infor Error!"
         }
     }
     

@@ -18,16 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvv-9t-2lA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvv-9t-2lA">
                                 <rect key="frame" x="20" y="544" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-QR-Apk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-QR-Apk">
                                 <rect key="frame" x="20" y="84" width="560" height="452"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melboune" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV2-pQ-Nev">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-ck-Wjl">
+                                <rect key="frame" x="290" y="300" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ......" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziX-mv-GeV">
+                                <rect key="frame" x="20" y="349" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV2-pQ-Nev">
                                 <rect key="frame" x="20" y="28" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,14 +56,21 @@
                             <constraint firstItem="mvQ-QR-Apk" firstAttribute="centerX" secondItem="txc-y5-teT" secondAttribute="centerX" id="Nc8-uZ-YrB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zvv-9t-2lA" secondAttribute="leading" id="PC8-b2-tTt"/>
                             <constraint firstItem="zvv-9t-2lA" firstAttribute="centerX" secondItem="mvQ-QR-Apk" secondAttribute="centerX" id="PS0-Yv-KUB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ziX-mv-GeV" secondAttribute="trailing" id="RrB-BJ-aiq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dV2-pQ-Nev" secondAttribute="trailing" id="SSe-8t-YF5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ziX-mv-GeV" secondAttribute="leading" id="UnJ-9b-6vC"/>
+                            <constraint firstItem="LMg-ck-Wjl" firstAttribute="centerY" secondItem="mvQ-QR-Apk" secondAttribute="centerY" id="XsK-Gr-K5Q"/>
                             <constraint firstItem="k4m-lh-twR" firstAttribute="top" secondItem="zvv-9t-2lA" secondAttribute="bottom" constant="8" symbolic="YES" id="gV7-6k-nsx"/>
+                            <constraint firstItem="LMg-ck-Wjl" firstAttribute="centerX" secondItem="mvQ-QR-Apk" secondAttribute="centerX" id="ima-37-Bu7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mvQ-QR-Apk" secondAttribute="leading" id="mCm-Yk-xRk"/>
                             <constraint firstItem="dV2-pQ-Nev" firstAttribute="centerX" secondItem="txc-y5-teT" secondAttribute="centerX" id="oU6-Wj-bWG"/>
+                            <constraint firstItem="ziX-mv-GeV" firstAttribute="top" secondItem="LMg-ck-Wjl" secondAttribute="bottom" constant="29" id="qcs-TU-Xem"/>
                             <constraint firstItem="zvv-9t-2lA" firstAttribute="centerX" secondItem="txc-y5-teT" secondAttribute="centerX" id="wjL-xZ-RwP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="LMg-ck-Wjl" id="iti-cf-bUk"/>
+                        <outlet property="loadingLabel" destination="ziX-mv-GeV" id="mLH-Wn-jK9"/>
                         <outlet property="location" destination="dV2-pQ-Nev" id="gzG-BZ-YIg"/>
                         <outlet property="temperatureLabel" destination="zvv-9t-2lA" id="iHc-Dn-9bE"/>
                         <outlet property="weatherImageView" destination="mvQ-QR-Apk" id="Cw8-S1-xqy"/>
@@ -65,7 +81,4 @@
             <point key="canvasLocation" x="353" y="450"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cloudy" width="150" height="112"/>
-    </resources>
 </document>
